@@ -1,0 +1,595 @@
+html { height: 97%; width:97%; }
+body, div, h1, h2, h3, h4, h5, h6, p, ol, ul, table, a, img { margin: 0; padding: 0; border: 0; outline: 0; background: transparent; }
+ol, ul{ display: block; list-style: none; }
+*{ margin:0; padding:0; }
+
+body{
+    width:100%;
+    height:100%;
+    font-size:12px;
+    font-family:Helvetica, sans-serif;
+    background-image: url("../img/madera_body.jpg");
+    background-color: white;
+    color: white;
+}
+legend {
+  margin:5px auto 0 auto;
+  font-size: 18px;
+}
+#contenido {
+    margin:15px auto 0 auto;
+    width: 80%;
+    min-height:90%;
+	  height:auto;
+    overflow: auto;
+    padding: 30px;
+    text-align: center;
+    text-align: center;
+    background: #086A87;
+    border-radius: 15px;
+}
+#contenido1 {
+    margin:15px auto 0 auto;
+    width: 50%;
+    min-height:50%;
+    height:auto;
+    overflow: auto;
+    padding: 15px;
+    text-align: center;
+    text-align: center;
+    background: #086A87;
+    border-radius: 15px;
+}
+#bloque {
+  margin: 0 auto 0 auto;
+  width:65%;
+  height: 80%;
+  border-radius:15px;
+  overflow: auto;
+}
+#nav {
+  width:70%;
+  margin:0 auto 0 auto;
+  z-index: 9999;
+}
+
+/* Root = Horizontal, Secondary = Vertical */
+ul#menu {
+  background:#e4e4e4;
+  margin:100px auto 0 auto;
+  border: 0 none;
+  padding: 0;
+/*  width: 500px;*/ /*For KHTML*/
+  width:500px;
+  list-style: none;
+  height: 20px;
+  border:1px solid #eee;
+  padding-bottom:5px;
+  z-index:100;
+}
+
+ul#menu li {
+  background:#e4e4e4;
+  margin: 0;
+  border: 0 none;
+  padding: 0;
+  float: left; /*For Gecko*/
+  display: inline;
+  list-style: none;
+  position: relative;
+  height: 20px;
+}
+ul#menu li{
+  padding-bottom:5px;
+}
+ul#menu li:hover{
+  background:#ddd;
+  z-index:100;
+}
+
+ul#menu  ul {
+  margin: 0;
+  border: 0 none;
+  padding: 0;
+  width: 160px;
+  list-style: none;
+  display: none;
+  position: absolute;
+  top: 25px;
+  left: 10px;
+  background: #eee;
+  border: none;
+  opacity: 0.8;
+  -moz-opacity: 0.8;
+  filter:alpha(opacity=80);
+  z-index:100;
+}
+
+ul#menu ul:after /*From IE 7 lack of compliance*/{
+  clear: both;
+  display: block;
+  font: 1px/0px serif;
+  content: ".";
+  height: 0;
+  visibility: hidden;
+  z-index:100;
+}
+
+ul#menu ul li {
+  width: 160px;
+  float: left; /*For IE 7 lack of compliance*/
+  display: block !important;
+  display: inline; /*For IE*/
+}
+
+/* Root Menu */
+ul#menu a {
+  padding: 5px 15px 5px;
+  float: none !important; /*For Opera*/
+  float: left; /*For IE*/
+  display: block;
+  color: blue;
+  text-decoration: none;
+  font-weight: bold;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:12px;
+  font-weight:bold;
+/*  border-right:1px solid #818181;*/
+  text-decoration: none;
+  height: auto !important;
+  height: 1%; /*For IE*/
+}
+
+/* Root Menu Hover Persistence */
+ul#menu a:hover,
+ul#menu li:hover a,
+ul#menu li.iehover a {
+color: #003300;
+z-index:100;
+}
+
+/* 2nd Menu */
+ul#menu li:hover li a,
+ul#menu li.iehover li a {
+  float: none;
+  border:none;
+}
+
+/* 2nd Menu Hover Persistence */
+ul#menu li:hover li a:hover,
+ul#menu li:hover li:hover a,
+ul#menu li.iehover li a:hover,
+ul#menu li.iehover li.iehover a {
+ background:#ddd;
+  color: #003300;
+}
+
+/* 3rd Menu */
+ul#menu li:hover li:hover li a,
+ul#menu li.iehover li.iehover li a {
+  background: #EEE;
+  color: #666;
+}
+
+/* 3rd Menu Hover Persistence */
+
+ul#menu li:hover li:hover li a:hover,
+ul#menu li:hover li:hover li:hover a,
+ul#menu li.iehover li.iehover li a:hover,
+ul#menu li.iehover li.iehover li.iehover a {
+background:#ddd;
+  color: #FFF;
+}
+
+/* 4th Menu */
+ul#menu li:hover li:hover li:hover li a,
+ul#menu li.iehover li.iehover li.iehover li a {
+background:#ddd;
+  color: #666;
+}
+
+/* 4th Menu Hover */
+ul#menu li:hover li:hover li:hover li a:hover,
+ul#menu li.iehover li.iehover li.iehover li a:hover {
+  background: #CCC;
+  color: #FFF;
+}
+
+ul#menu ul ul,
+ul#menu ul ul ul {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 160px;
+}
+
+/* Do Not Move - Must Come Before display:block for Gecko */
+ul#menu li:hover ul ul,
+ul#menu li:hover ul ul ul,
+ul#menu li.iehover ul ul,
+ul#menu li.iehover ul ul ul {
+  display: none;
+}
+
+ul#menu li:hover ul,
+ul#menu ul li:hover ul,
+ul#menu ul ul li:hover ul,
+ul#menu li.iehover ul,
+ul#menu ul li.iehover ul,
+ul#menu ul ul li.iehover ul {
+  display: block;
+}
+ul#menu .selected{
+  color: #003300;
+}
+
+/*
+
+=====================================
+
+ * Data Tables and Cascading Style Sheets Gallery *
+
+ *  http://icant.co.uk/csstablegallery/index.php  *
+
+ * Author: Velizar Garvalov at  http://www.vhg-design.com/ *
+
+ =====================================
+
+*/
+
+
+
+table {
+
+  width: 100%;
+
+  margin:0; 
+
+  padding:0;
+
+  font-family: "Trebuchet MS", Trebuchet, Arial, sans-serif;  
+
+  color: #1c5d79;
+
+  
+
+}
+
+table, tr, th, td {
+
+  border-collapse: collapse;
+
+}
+
+caption {
+
+margin:0; 
+
+  padding:0;
+
+  background: #f3f3f3;
+
+  height: 40px;
+
+  line-height: 40px;
+
+  text-indent: 28px;
+
+  font-family: "Trebuchet MS", Trebuchet, Arial, sans-serif;  
+
+  font-size: 14px;
+
+  font-weight: bold;
+
+  color: #555d6d;
+
+  text-align: left;
+
+  letter-spacing: 3px;
+
+  border-top: dashed 1px #c2c2c2;
+
+  border-bottom: dashed 1px #c2c2c2;
+
+}
+
+
+
+/* HEAD */
+
+
+
+thead {
+
+  background-color: #FFFFFF;
+
+  border: solid 1px #326e87;
+
+}
+
+thead tr th {
+
+  height: 32px;
+
+  line-height: 32px;
+
+  text-align: center;
+
+  color: #1c5d79;
+
+  background-image: url(col_bg.gif);
+
+  background-repeat: repeat-x;
+
+  /*border-left:solid 1px #FF9900;
+
+  border-right:solid 1px #FF9900; */
+  
+  border: solid 1px #326e87;
+
+  border-collapse: collapse;
+
+  
+
+}
+
+
+
+/* BODY */
+
+
+
+tbody tr {
+
+  background: #dfedf3;
+
+  font-size: 13px;
+
+}
+
+tbody tr.odd {
+
+  background: #F0FFFF;
+
+}
+
+tbody tr:hover, tbody tr.odd:hover {
+
+  background: #ffffff;
+
+}
+
+tbody tr th, tbody tr td {
+
+  padding: 6px;
+
+  border: solid 1px #326e87;
+
+}
+
+tbody tr th {
+
+  background: #1c5d79;
+
+  font-family: "Trebuchet MS", Trebuchet, Arial, sans-serif;  
+
+  font-size: 12px;
+
+  padding: 6px;
+
+  text-align: center;
+
+  font-weight: bold;
+
+  color: #FFFFFF;
+
+  border-bottom: solid 1px white;
+
+}
+
+tbody tr th:hover {
+
+  background: #ffffff;
+
+
+
+}
+
+
+
+/* LINKS */
+
+
+
+table a {
+
+  color: #FF6600;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  border-bottom: solid 1px white;
+
+}
+
+table a:hover {
+
+  color: #FF9900;
+
+  border-bottom: none;
+
+}
+
+
+
+/* FOOTER */
+
+
+
+tfoot {
+
+  background: #f3f3f3;
+
+  height: 24px;
+
+  line-height: 24px;
+
+  font-family: "Trebuchet MS", Trebuchet, Arial, sans-serif;  
+
+  font-size: 14px;
+
+  font-weight: bold;
+
+  color: #555d6d;
+
+  text-align: center;
+
+  letter-spacing: 3px;
+
+  border-top: solid 2px #326e87;
+
+  border-bottom: dashed 1px #c2c2c2;
+
+}
+
+tfoot tr th, tfoot tr td {
+
+  /*padding: .1em .6em;*/
+
+  
+
+}
+
+tfoot tr th {
+
+  border-top: solid 1px #326e87;
+
+}
+
+tfoot tr td {
+
+  text-align: right;
+
+  
+
+}
+
+
+
+.buttonDetalle {
+  -moz-box-shadow:inset 0px 1px 0px 0px #d9fbbe;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #d9fbbe;
+  box-shadow:inset 0px 1px 0px 0px #d9fbbe;
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #b8e356), color-stop(1, #088A29) );
+  background:-moz-linear-gradient( center top, #b8e356 5%, #088A29 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#04B431', endColorstr='#04B431');
+  background-color:#b8e356;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  border:1px solid none;
+  display:inline-block;
+  color:#ffffff;
+  font-family:arial;
+  font-size:11px;
+  font-weight:bold;
+  padding:6px 24px;
+  text-decoration:none;
+  text-shadow:1px 1px 0px #86ae47;
+  margin:0 auto 0 auto;
+   
+}
+.buttonDetalle:hover {
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #a5cc52), color-stop(1, #b8e356) );
+  background:-moz-linear-gradient( center top, #a5cc52 5%, #b8e356 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#a5cc52', endColorstr='#b8e356');
+  background-color:#a5cc52;
+  cursor: pointer;
+}
+
+.buttonDetalle:active {
+  position:relative;
+  top:1px;
+}
+
+label.error { float: none; color: red; padding-left: .5em; vertical-align: top; }
+
+#btnDeleteRow{
+	margin-left:10px;
+}
+
+.paging_full_numbers{
+	line-height: 30px!important;
+}
+
+
+.galeria {
+  border:1px solid black;
+  height:165px;
+  width:165px;
+  float:left;
+  z-index: 0;
+  margin:30px 0 40px 60px;
+}
+.imagenDelGaleria {
+  z-index: 9999;
+  margin-top:-150px;
+  margin-right:140px;
+  width:20px;
+  height:20px;
+    opacity:0.60;
+
+}
+
+.imagenDelGaleria:hover {
+  cursor:wait;
+  opacity:1;
+}
+
+
+.buttonEliminar{
+  -moz-box-shadow:inset 0px 1px 0px 0px #d9fbbe;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #d9fbbe;
+  box-shadow:inset 0px 1px 0px 0px #d9fbbe;
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #b8e356), color-stop(1, #a5cc52) );
+  background:-moz-linear-gradient( center top, #b8e356 5%, #a5cc52 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#b8e356', endColorstr='#a5cc52');
+  background-color:#b8e356;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  border:1px solid #83c41a;
+  display:inline-block;
+  color:#ffffff;
+  font-family:arial;
+  font-size:11px;
+  font-weight:bold;
+  padding:6px 24px;
+  text-decoration:none;
+  text-shadow:1px 1px 0px #86ae47;
+  margin:3px auto 0 auto;
+
+}
+.buttonEliminar:hover {
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, red), color-stop(1, red) );
+  background:-moz-linear-gradient( center top, red 5%, red 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=red, endColorstr=red);
+  background-color:red;
+  border:1px solid red;
+  color:black;
+    text-shadow:none;
+    padding:none;
+
+
+}
+.buttonEliminar:active {
+  position:relative;
+  top:1px;
+}
+
+#sesion
+{
+  float: right;
+
+}

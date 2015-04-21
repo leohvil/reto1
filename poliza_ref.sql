@@ -1,0 +1,54 @@
+-- phpMyAdmin SQL Dump
+-- version 4.2.11
+-- http://www.phpmyadmin.net
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 11-12-2014 a las 01:26:42
+-- Versión del servidor: 5.6.21
+-- Versión de PHP: 5.6.3
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Base de datos: `retodb`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `poliza_ref`
+--
+
+CREATE TABLE IF NOT EXISTS `poliza_ref` (
+  `poliza` varchar(8) NOT NULL,
+  `nombre` varchar(20) NOT NULL,
+  `importe` varchar(20) NOT NULL,
+  `referencia` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `poliza_ref`
+--
+
+INSERT INTO `poliza_ref` (`poliza`, `nombre`, `importe`, `referencia`) VALUES
+('ZZ9907', 'MARIN MUÃŒÃ”OZ MARIA', '358.05', 'PROV0000ZZ99070000DV'),
+('ZZ9891', 'MARTIN LANDINOS GERA', '366.73', 'PROV0000ZZ98910000DV'),
+('ZZ9876', 'SANCHEZ FLORES GUILL', '100', 'PROV0000ZZ98760000DV'),
+('ZZ9871', 'MARTINEZ MUCIÃŒÃ”O C', '121.03', 'PROV0000ZZ98710000DV'),
+('ZZ9844', 'GUERRA RAMIREZ ARACE', '100', 'PROV0000ZZ98440000DV'),
+('ZZ9825', 'RAMIREZ MEDRANO MARI', '64.26', 'PROV0000ZZ98250000DV'),
+('ZZ9768', 'LARIOS TORREJON OFEL', '219.64', 'PROV0000ZZ97680000DV'),
+('ZZ9753', 'PRECIADO PALAFOX ALE', '57.23', 'PROV0000ZZ97530000DV'),
+('ZZ9745', 'ROCHA COVARRUBIAS JE', '642.56', 'PROV0000ZZ97450000DV'),
+('ZZ9731', 'CHAVEZ BARRETO MARTH', '150', 'PROV0000ZZ97310000DV');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
